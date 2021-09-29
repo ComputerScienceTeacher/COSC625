@@ -360,7 +360,7 @@ public class Main//VideoStoreSLL
             System.out.println("===========================");  
             System.out.println("Select any one of the following");  
             System.out.println("1: To add a student");  
-            System.out.println("2: To delete a video");  
+            System.out.println("2: To delete a video1");  
             System.out.println("3: To add a customer");  
             System.out.println("4: To delete a customer");  
             //System.out.println("5. Remove all nodes from AVL Tree");
