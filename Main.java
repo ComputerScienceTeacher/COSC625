@@ -379,7 +379,7 @@ public class Main//VideoStoreSLL
             
             /*System.out.println("\nSelect an operation:\n");  
             System.out.println("1. To add a video");  
-            System.out.println("2. To delete a video");  
+            System.out.println("2. To delete a student");  
             System.out.println("3. To add a customer");  
             System.out.println("4. To delete a customer");  
             //System.out.println("5. Remove all nodes from AVL Tree");
