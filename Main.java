@@ -338,7 +338,11 @@ public class Main//VideoStoreSLL
 //{
     //main() method starts  
     public static void main(String[] args)  
-    {              
+    {
+	choice(menu());
+    }
+	
+    public static int menu(){
         //creating Scanner class object to get input from user  
         Scanner sc = new Scanner(System.in).useDelimiter("\n");  
   
@@ -396,7 +400,11 @@ public class Main//VideoStoreSLL
             String name;
   
             //get choice from user  
-            int ch = sc.nextInt();              
+            int ch = sc.nextInt();
+	    return ch;
+	}
+	    
+	public static choice(int ch){
             switch (ch)  
             {  
                 case 1 :   
