@@ -1,0 +1,68 @@
+import javax.swing.*;
+import java.awt.event.*;
+  
+public class MenuExample implements ActionListener  
+{  
+    private JMenu menu1, menu2, menu3, submenu1, submenu2;  
+    private JMenuItem i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11;  
+    private JLabel label;
+    private JTextField textField;
+    private JButton button;
+    
+    MenuExample(){  
+      JFrame f= new JFrame("Requirements Planning");  
+      JMenuBar mb=new JMenuBar();
+
+      //first menu bar
+      menu1=new JMenu("Student");  
+      submenu1=new JMenu("Student Requirements");  
+      i1=new JMenuItem("Class History");  
+      i2=new JMenuItem("GPA Calculation");  
+      i3=new JMenuItem("Current Schedule");  
+      i4=new JMenuItem("Classes Needed");  
+      i5=new JMenuItem("Suggested Classes");  
+      menu1.add(i1); menu1.add(i2); menu1.add(i3);  
+      submenu1.add(i4); submenu1.add(i5);  
+      menu1.add(submenu1);  
+      mb.add(menu1);  
+      
+      //second menu bar
+      menu2=new JMenu("Teacher");  
+      submenu2=new JMenu("Classes");    
+      i6=new JMenuItem("Current Teachers");  
+      i7=new JMenuItem("Current Master Schedule");  
+      i8=new JMenuItem("Teachers Needed");  
+      i9=new JMenuItem("Course Adds");  
+      menu2.add(i6); menu2.add(i7);  
+      submenu2.add(i8); submenu2.add(i9);  
+      menu2.add(submenu2);  
+      mb.add(menu2);
+      
+      //third menu bar
+      menu3=new JMenu("Random Math");     
+      i10=new JMenuItem("Square Numbers");
+      i10.addActionListener(this);
+      i11=new JMenuItem("Square Root Numbers");
+      i11.addActionListener(this);
+      menu3.add(i10); menu3.add(i11);  
+      mb.add(menu3); 
+      
+      f.setJMenuBar(mb);  
+      f.setSize(400,400);  
+      f.setLayout(null);  
+      f.setVisible(true);  
+    }
+    
+    public void actionPerformed(ActionEvent e) {    
+        if(e.getSource()==i10){    
+            ;
+        }
+        if(e.getSource()==i11)    
+            ;     
+    }     
+    
+    public static void main(String args[])  
+    {  
+      new MenuExample();  
+    }
+}  
