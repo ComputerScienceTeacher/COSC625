@@ -1,0 +1,73 @@
+//Example 1 Java Swing example with label and text field
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class SwingApplication extends JFrame implements ActionListener
+{
+    private JLabel label;
+    private JTextField textField;
+    private JButton button;
+    public SwingApplication () {
+        super("Java Swing with Label");
+        setLayout(new FlowLayout());
+        textField =new JTextField (20);
+        add(textField);
+        button=new JButton ("Equals");
+        button.addActionListener(this);
+        add(button);
+        label=new JLabel("This is a swing label!");
+
+        add(label);
+    }
+    
+    
+    /**
+    * Create the GUI and show it. For thread safety,
+    * this method should be invoked from the
+    * event-dispatching thread.
+    */
+    private static void createAndShowGUI() {
+        //Make sure we have nice window decorations.
+        //JFrame.setDefaultLookAndFeelDecorated(true);
+        //Create and set up the window.
+        JFrame frame = new SwingApplication ();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //Display the window.
+        frame.pack();
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
+    }
+    
+    
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        javax.swing.SwingUtilities.invokeLater(new Runnable()
+        {
+            public void run() {
+                createAndShowGUI();
+            }
+        }
+        );  
+    }
+    
+    
+    public boolean isNumeric(String s) {  
+        return s != null && s.matches("[-+]?\\d*\\.?\\d+");  
+    }  
+    
+    public void actionPerformed (ActionEvent e){
+        float s;
+        if (e.getSource()==button){
+            
+            if(isNumeric(textField.getText())){
+                s=Float.parseFloat(textField.getText());
+                s=s*s;
+                label.setText(textField.getText() + " squared is " + s);
+            }else{
+                label.setText("Number only, please.");
+            }
+        }
+    }
+}
